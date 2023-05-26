@@ -10,13 +10,20 @@ export class Serie {
     episodios: Episodios[];
     plataforma: Plataforma[];
 
-    constructor(imagen: string, nombre: string, categoria: string[], persona: Persona[], episodios: Episodios[], plataforma: Plataforma[]) {
+    constructor(imagen: string, nombre: string, categoria: string[], persona: Persona[]) {
         this.imagen = imagen
         this.nombre = nombre
         this.categoria = categoria
         this.persona = persona
-        this.episodios = episodios
-        this.plataforma = plataforma
+        this.episodios = []
+        this.plataforma = []
+    }
+    agregarEpisodios(episodio:Episodios){
+        this.episodios.push(episodio)
+    }
+
+    agregarPlataforma(plataforma:Plataforma){
+        this.plataforma.push(plataforma)
     }
 
     listarCategoria(){
@@ -34,4 +41,8 @@ export class Serie {
     listaEpisodios(){
 
     }
+}
+
+function listarSerie(){
+    console.log()
 }

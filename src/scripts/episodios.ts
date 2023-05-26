@@ -12,4 +12,5 @@ export class Episodios {
         this.tiempo = tiempo;
         this.serie = serie;
     }
+    
 }
