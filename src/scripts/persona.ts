@@ -19,7 +19,14 @@ export class Persona {
         this.series.push(serie)
     }
 
-    listarSerie(){
+    listaSeriesPersona(persona: Persona){
+        console.log(`${persona.nombre} participa en las siguientes series: `)
+        persona.series.forEach((value) => {
+            console.log(value.nombre)
+        })
+    }
+
+    listarSeries(){
 
     }
 }

@@ -13,15 +13,39 @@ export class Serie {
     agregarPlataforma(plataforma) {
         this.plataforma.push(plataforma);
     }
-    listarCategoria() {
+    listarCategoria(serie) {
+        console.log(`La serie ${serie.nombre} tiene las categorías ${serie.categoria}`);
     }
-    listaAutor() {
+    listaActor(serie) {
+        console.log(`La serie ${serie.nombre} tiene los siguientes actores:`);
+        serie.persona.map((value) => {
+            if (value.rol === "Actor") {
+                console.log(value.nombre);
+            }
+        });
     }
-    listaDirector() {
+    listaDirector(serie) {
+        console.log(`El director de la serie ${serie.nombre} es:`);
+        serie.persona.map((value) => {
+            if (value.rol === "Director") {
+                console.log(value.nombre);
+            }
+        });
     }
-    listaEpisodios() {
+    listaEpisodios(serie) {
+        serie.episodios.forEach((value) => {
+            console.log(value);
+        });
     }
 }
-function listarSerie() {
-    console.log();
+let arraySeries = [];
+export function series(serie) {
+    arraySeries.push(serie);
+}
+export function mostrarSeries() {
+    if (arraySeries != undefined) {
+        arraySeries.forEach((value) => {
+            console.log(value);
+        });
+    }
 }

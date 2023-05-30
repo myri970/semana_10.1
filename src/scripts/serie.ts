@@ -18,6 +18,7 @@ export class Serie {
         this.episodios = []
         this.plataforma = []
     }
+
     agregarEpisodios(episodio:Episodios){
         this.episodios.push(episodio)
     }
@@ -26,23 +27,44 @@ export class Serie {
         this.plataforma.push(plataforma)
     }
 
-    listarCategoria(){
-
+    listarCategoria(serie: Serie){
+        console.log(`La serie ${serie.nombre} tiene las categorías ${serie.categoria}`)
     }
 
-    listaAutor(){
-
+    listaActor(serie: Serie){
+        console.log(`La serie ${serie.nombre} tiene los siguientes actores:`)
+        serie.persona.map((value) => {
+            if(value.rol === "Actor"){
+                console.log(value.nombre)
+            }
+        })
     }
 
-    listaDirector(){
-
+    listaDirector(serie: Serie){
+        console.log(`El director de la serie ${serie.nombre} es:`)
+        serie.persona.map((value) => {
+            if(value.rol === "Director"){
+                console.log(value.nombre)
+            }
+        })
     }
 
-    listaEpisodios(){
-
+    listaEpisodios(serie: Serie){
+        serie.episodios.forEach((value) => {
+            console.log(value)
+        })
     }
 }
+let arraySeries: Serie[] = []
 
-function listarSerie(){
-    console.log()
+export function series(serie: Serie){
+    arraySeries.push(serie)
+}
+
+export function mostrarSeries(){
+    if (arraySeries != undefined) {
+        arraySeries.forEach((value) => {
+            console.log(value)
+        })
+    }
 }
