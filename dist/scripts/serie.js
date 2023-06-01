@@ -14,10 +14,10 @@ export class Serie {
         this.plataforma.push(plataforma);
     }
     listarCategoria(serie) {
-        console.log(`La serie ${serie.nombre} tiene las categorías ${serie.categoria}`);
+        console.log(`Categorías de la serie ${serie.nombre} : ${serie.categoria}`);
     }
     listaActor(serie) {
-        console.log(`La serie ${serie.nombre} tiene los siguientes actores:`);
+        console.log(`Actores de la serie ${serie.nombre} : `);
         serie.persona.map((value) => {
             if (value.rol === "Actor") {
                 console.log(value.nombre);
@@ -25,7 +25,7 @@ export class Serie {
         });
     }
     listaDirector(serie) {
-        console.log(`El director de la serie ${serie.nombre} es:`);
+        console.log(`Director(es) de la serie ${serie.nombre} :`);
         serie.persona.map((value) => {
             if (value.rol === "Director") {
                 console.log(value.nombre);
@@ -33,6 +33,7 @@ export class Serie {
         });
     }
     listaEpisodios(serie) {
+        console.log(`Episodios de la serie ${serie.nombre} :`);
         serie.episodios.forEach((value) => {
             console.log(value);
         });

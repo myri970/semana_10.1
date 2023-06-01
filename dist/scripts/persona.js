@@ -9,12 +9,10 @@ export class Persona {
     agregarSerie(serie) {
         this.series.push(serie);
     }
-    listaSeriesPersona(persona) {
+    listaSeries(persona) {
         console.log(`${persona.nombre} participa en las siguientes series: `);
         persona.series.forEach((value) => {
             console.log(value.nombre);
         });
-    }
-    listarSeries() {
     }
 }

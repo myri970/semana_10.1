@@ -4,16 +4,15 @@ export class Planes {
     nombre: string;
     descripcion: string;
     precio: number;
-    plataforma: Plataforma[];
+    plataforma: Plataforma | undefined;
 
-    constructor(nombre: string, descripcion: string, precio: number, plataforma: Plataforma[]){
+    constructor(nombre: string, descripcion: string, precio: number){
         this.nombre = nombre;
         this.descripcion =  descripcion
         this.precio = precio;
-        this.plataforma = []
     }
 
     agregarPlataforma(plataforma: Plataforma){
-        this.plataforma.push(plataforma)
+        this.plataforma = plataforma
     }
 }

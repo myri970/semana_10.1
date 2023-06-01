@@ -28,11 +28,11 @@ export class Serie {
     }
 
     listarCategoria(serie: Serie){
-        console.log(`La serie ${serie.nombre} tiene las categorías ${serie.categoria}`)
+        console.log(`Categorías de la serie ${serie.nombre} : ${serie.categoria}`)
     }
 
     listaActor(serie: Serie){
-        console.log(`La serie ${serie.nombre} tiene los siguientes actores:`)
+        console.log(`Actores de la serie ${serie.nombre} : `)
         serie.persona.map((value) => {
             if(value.rol === "Actor"){
                 console.log(value.nombre)
@@ -41,7 +41,7 @@ export class Serie {
     }
 
     listaDirector(serie: Serie){
-        console.log(`El director de la serie ${serie.nombre} es:`)
+        console.log(`Director(es) de la serie ${serie.nombre} :`)
         serie.persona.map((value) => {
             if(value.rol === "Director"){
                 console.log(value.nombre)
@@ -50,6 +50,7 @@ export class Serie {
     }
 
     listaEpisodios(serie: Serie){
+        console.log(`Episodios de la serie ${serie.nombre} :`)
         serie.episodios.forEach((value) => {
             console.log(value)
         })
